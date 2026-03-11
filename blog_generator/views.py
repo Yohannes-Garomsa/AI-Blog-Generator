@@ -11,6 +11,9 @@ import os
 import assemblyai as aai
 import openai
 from .models import BlogPost
+from dotenv import load_dotenv
+load_dotenv()
+
 
 
 
