@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Blog</title>
+    <link rel="icon" href="https://fav.farm/✍️" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100 font-sans antialised">
+    <nav
+      class="bg-blue-700 text-white p-4 shadow-md flex justify-between items-center"
+    >
+      <div>
+        <h1 class="text-3xl font-bold">AI Blog Generator</h1>
+      </div>
+      <div>
+        <a href="#" class="text-white hover:underline">logout</a>
+      </div>
+    </nav>
+
+    <!-- main content container -->
+    <div class="conatainer mx-auto mt-10 px-4 sm:px-4">
+      <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <!-- blog section -->
+        <section>
+          <h2 class="text-xl mb-4 font-semibold">All Blog Post</h2>
+          <div class="space-y-4">
+            {%for article in blog_aarticles reversed%}
+            <a href="blog-details/{{article.id}}">
+              <div class="border border-gray-300 p-4 rounded-lg shadow-md">
+                <h3 class="text-lg font-semibold">{{article.youtube_title}}</h3>
+                <p>{{article.generated_content|truncatechars:80}}</p>
+              </div>
+            </a>
+
+            {% endfor %%}
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer>
+      <div class="text-center p-4 text-black mt-6">
+        powered by <a href="#">code with john</a>
+      </div>
+    </footer>
+  </body>
+</html>

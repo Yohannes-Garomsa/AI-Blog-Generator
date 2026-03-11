@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="icon" href="https://fav.farm/✍️" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-100 font-sans antialiased">
+    <nav
+      class="bg-blue-700 text-white p-4 shadow-md flex justify-between items-center"
+    >
+      <div>
+        <h1 class="text-3xl font-bold">AI Blog Generator</h1>
+      </div>
+      <div>
+        <a href="login" class="text-white hover:underline">login</a>
+        <a href="signup" class="text-white hover:underline">Signup</a>
+      </div>
+    </nav>
+    <!-- main content -->
+    <div class="flex items-center justify-center h-screen">
+      <div class="bg-white p-8 shadow-md rounded-lg max-w-md w-full">
+        <!-- login -->
+        <form class="space-y-4" action="" method="POST">
+          {% csrf_token %} {% if Error_meassage %}
+          <div align="center" style="color: red">
+            <h2>{{Error_meassage}}</h2>
+          </div>
+          {% endif %}
+          <h2>Login</h2>
+          <div>
+            <label for="username" class="black mb-1 font-medium"
+              >Username:</label
+            >
+            <input
+              type="text"
+              placeholder="Enter your username..."
+              id="username"
+              name="username"
+              class="w-full border rounded-1xl"
+            />
+          </div>
+
+          <div>
+            <label for="password" class="black mb-1 font-medium"
+              >Password:</label
+            >
+            <input
+              type="password"
+              placeholder="Enter your  password..."
+              id="password"
+              name="password"
+              class="w-full border rounded-1xl"
+            />
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+          >
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
